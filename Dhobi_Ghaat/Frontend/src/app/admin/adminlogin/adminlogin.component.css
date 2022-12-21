@@ -1,0 +1,15 @@
+.wrapper1 {
+    height:20px; 
+    width:100px; 
+    margin: -20px -50px; 
+    position:relative;
+    top:50%; 
+    left:50%;
+    margin-top: 50px;
+  }
+
+  .container{
+    color: azure;
+    text-align: center;
+
+  }

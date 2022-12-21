@@ -1,0 +1,46 @@
+<div style="padding-top: 80px;">
+    
+    <div class="container">
+        <h3>Customer login</h3>
+    </div>
+    <br>
+    <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
+    <form #loginForm='ngForm' (ngSubmit)="loginForm.form.valid && Login()">
+        <div>
+
+            <div class="form-group">
+                <!--<label>Email</label> -->
+                <br>
+                <input type="text" name="email" class="form-control" style="width: 300px" required email
+                    placeholder="Enter your email" [(ngModel)]="email" #emailid="ngModel"
+                    [ngClass]="{'is-invalid':loginForm.submitted && emailid.invalid}">
+                <div *ngIf="loginForm.submitted && emailid.invalid" class="invalid-feedback">
+                    <div *ngIf="emailid.errors.required">
+                        Email is required
+                    </div>
+                    <div *ngIf="emailid.errors.email">
+                        email must be a valid email
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <!--<label>Password</label>-->
+                <br>
+                <input type="password" name="password" class="form-control" style="width: 300px" required minlength="6"
+                    placeholder="Enter Password" [(ngModel)]="password" #loginpassword="ngModel"
+                    [ngClass]="{'is-invalid':loginForm.submitted && loginpassword.invalid}">
+                <div *ngIf="loginForm.submitted && loginpassword.invalid" class="invalid-feedback">
+                    <div *ngIf="loginpassword.errors.required">
+                        Password is required
+                    </div>
+                    <div *ngIf="loginpassword.errors.minlength">
+                        Please enter a valid password
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper1">
+            <button class="btn btn-primary" type="submit" id="login">Login</button>
+        </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,77 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <img src="./assets/images/Logo.png" height="80px" width="300px">
+            </li>
+        </ul>
+    </div>
+    
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto" >
+            <li class="nav-item">
+                <a class="nav-link" *ngIf="showing" style="color:white" routerLink="login">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" *ngIf="showing" style="color:white"routerLink="register">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" *ngIf="!showing" style="color:white"routerLink="welcome/name">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" *ngIf="!showing || !adminShowing" style="color:white"(click)="Logout()" routerLink="logout">Logout</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" *ngIf="adminShowing" style="color:white"routerLink="about-us">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" *ngIf="!showing" style="color:white" routerLink="feedback">Feedback</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" color="accent" style="color:red" *ngIf="!showing" routerLink="profile">Profile</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+
+<!-- OLD CODE OF NAV-BAR
+<mat-toolbar color="primary" class="mat-elevation-z8" style="width: 100%;">
+    <div class="row" >
+        <div id="logo" style="float:left">
+            <img src="./assets/images/Logo.png" height="80px" width="300px">
+        </div>
+class="col-6" 
+        <div class="spacer"></div>
+
+        <div id="options"  style="float:right">
+            <a mat-button *ngIf="showing" routerLink="login">Login</a>
+            <a mat-button *ngIf="showing" routerLink="register">Register</a>
+            <a mat-button *ngIf="!showing" routerLink="welcome/name">Home</a>
+            <a mat-button *ngIf="!showing" (click)="Logout()" routerLink="logout">Logout</a>
+            <a mat-button *ngIf="!showing" routerLink="about-us">About-Us</a>
+            <a mat-button *ngIf="!showing" routerLink="feedback">Give-Feedback</a>
+            <a mat-raised-button color="accent" *ngIf="!showing" routerLink="profile">Profile</a>
+        </div>
+    </div>
+</mat-toolbar>
+-->
+
+
+
+
+
+<!-- <div class="row">
+        <div class="col-7">
+            <img src="./assets/images/Logo.png" height="90px" width="300px" >
+        </div>
+        <div class="col-5">
+            <button [routerLink]="['/login']" routerLinkActive="router-link-active"  class="btn btn-primary">Login</button>
+            <button [routerLink]="['/register']" routerLinkActive="router-link-active"  class="btn btn-primary">Register</button>
+            <button [routerLink]="['/welcome/name']" routerLinkActive="router-link-active"  class="btn btn-primary">Home</button>
+            <button [routerLink]="['/profile']" routerLinkActive="router-link-active"  class="btn btn-primary">Profile</button>
+            <button onclick=localStorage.clear(); [routerLink]="['/logout']" routerLinkActive="router-link-active" class="btn btn-primary">Logout</button>
+        </div>
+    </div> -->

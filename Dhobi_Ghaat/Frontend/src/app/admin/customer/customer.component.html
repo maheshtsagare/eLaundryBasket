@@ -1,0 +1,31 @@
+
+<div class="con card" style="opacity: 0.9;">
+    <table class="table">
+        <tr>
+            <th>#</th>
+            <th>customerId</th>
+            <th>first Name</th>
+            <th>last Name</th>
+            <th>email</th>
+            <th>mob No</th>
+            <th>Get Orders</th>
+            <th>Get Address</th>
+            <th>Remove</th>
+        </tr>
+        <tr *ngFor="let cust of allCustomer; let i = index">
+            <td>{{i + 1}}</td>
+            <td>{{cust.customerId}}</td>
+            <td>{{cust.firstName}}</td>
+            <td>{{cust.lastName}}</td>
+            <td>{{cust.email}}</td>
+            <td>{{cust.mobNo}}</td>
+            <td><button class="btn btn-primary" (click)="getOrdersByCustId(cust.customerId,cust)">GetOrders</button></td>
+            <td><button  class="btn btn-primary" (click)="getCustAddress(cust.customerId,cust)">Get Address</button></td>
+            <td><button  class="btn btn-primary" (click)="removeByCustId(cust.customerId)">RemoveCustomer</button></td>
+
+        </tr>
+    </table>
+
+    <div class="btn btn-primary" (click)="getAllCustomer()">view All Customers</div>
+</div>
+

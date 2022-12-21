@@ -1,0 +1,60 @@
+<!--
+<div class="justify-content-center">
+   Welcome {{adminName | uppercase}}
+</div>
+<div class="container">
+
+<div class="card">
+
+    
+   <div class="row">
+       <div class="d-flex justify-content-center">
+           <button [routerLink]="['/customer']" routerLinkActive="router-link-active" class="btn btn-success">Cutomer</button>
+       </div>
+   </div><br>
+   <div class="row">
+       <div class="d-flex justify-content-center">
+           <button [routerLink]="['/orderstatus']" routerLinkActive="router-link-active" class="btn btn-success">View All Orders</button>
+       </div>
+   </div><br>
+
+   <div class="row">
+       <div class="d-flex justify-content-center">
+           <button [routerLink]="['/getordersbystatus']" routerLinkActive="router-link-active" class="btn btn-success">Get Orders by OrderStatus </button>
+       </div>
+   </div><br>
+   
+</div>
+</div>
+-->
+
+
+<div style="padding-top: 50px;">
+    <div>
+        <h3 style="color: white;"> Welcome ADMIN </h3>
+    </div>
+
+    <div id="profileTable" class="table table-borderless">
+            <tr>
+                <br>
+                <br>
+                <div class="wrapper">
+                    <button [routerLink]="['/customer']" routerLinkActive="router-link-active" class="btn btn-primary">Customer List</button>
+                </div>
+            </tr>
+            <tr>
+                <br>
+                <br>
+                <div class="wrapper">
+                    <button [routerLink]="['/orderstatus']" routerLinkActive="router-link-active" class="btn btn-primary">View All Orders</button>
+                </div>
+            </tr>
+            <tr>
+                <br>
+                <br>
+                <div class="wrapper">
+                    <button [routerLink]="['/getordersbystatus']" routerLinkActive="router-link-active" class="btn btn-primary">Get Orders by OrderStatus </button>
+                </div>
+            </tr>
+    </div>
+</div>

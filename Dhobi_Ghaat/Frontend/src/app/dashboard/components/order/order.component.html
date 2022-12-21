@@ -1,0 +1,38 @@
+<div class="card">
+    <div class="card-header">
+        <h3> Order-Details :- </h3>
+    </div>
+    <div class="table table-borderless">
+        <tr>
+            <th>Order-Date</th>
+            <td>{{particlrOrdr.orderDate}}</td>
+        </tr>
+        <tr>
+            <th>Service-Type</th>
+            <td>{{particlrOrdr.plan.service}}</td>
+        </tr>
+        <tr>
+            <th>Pick-up Date</th>
+            <td>{{particlrOrdr.pickUpDate}}</td>
+        </tr>
+        <tr>
+            <th>Delivery Date</th>
+            <td>{{particlrOrdr.deliveryDate}}</td>
+        </tr>
+        <tr>
+            <th>Order-Status</th>
+            <td>{{particlrOrdr.status}}</td>
+        </tr>
+        <tr>
+            <th>Weight of Clothes</th>
+            <td>{{particlrOrdr.weight}}</td>
+        </tr>
+        <tr>
+            <th>Total Amount</th>
+            <td>{{particlrOrdr.bill}}</td>
+        </tr>
+    </div>
+
+    <div [routerLink]="['/welcome']" routerLinkActive="router-link-active" class="btn btn-success">Go to home page</div>
+
+</div>

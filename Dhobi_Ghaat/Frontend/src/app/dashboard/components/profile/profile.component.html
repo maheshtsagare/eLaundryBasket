@@ -1,0 +1,50 @@
+<div class="card">
+    <div class="card-header">
+        <h3> Profile </h3>
+    </div>
+
+    <div id="profileTable" class="table table-borderless">
+            <tr>
+                <th>FirstName :- </th>
+                <td>{{customer.firstName}}</td>
+            </tr>
+            <tr>
+                <th>LastName :- </th>
+                <td>{{customer.lastName}}</td>
+            </tr>
+            <tr>
+                <th>Email-id :- </th>
+                <td>{{customer.email}}</td>
+            </tr>
+            <tr>
+                <th>Mobile number :- </th>
+                <td>{{customer.mobNo}}</td>
+            </tr>
+    </div>
+    <div class="card-header">
+        <h3> Addresses <button *ngIf="!hasAddress" [routerLink]="['/add-address']" routerLinkActive="router-link-active"
+             class="btn btn-success">Add address</button>  </h3>
+    </div>
+    
+    <div *ngIf="hasAddress" id="addressTable" class="table table-borderless">
+        <tr>
+            <th rowspan="4">Address {{address.addressId}} :- </th>
+            <td>houseNo : {{address[0]?.houseNo}}</td>
+        </tr>
+        <tr>
+            <td>society : {{address[0]?.society}}</td>
+        </tr>
+        <tr>
+            <td>city : {{address[0]?.city}}</td>
+        </tr>
+        <tr>
+            <td>pincode : {{address[0]?.pincode}}</td>
+        </tr>
+        <tr>
+            <td colspan="2"> <button [routerLink]="['/update-address']" routerLinkActive="router-link-active"
+                             class="btn btn-success">update address</button>
+            </td>
+        </tr>
+
+    </div>
+</div>

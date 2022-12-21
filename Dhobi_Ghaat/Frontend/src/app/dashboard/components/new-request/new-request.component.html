@@ -1,0 +1,44 @@
+<div style="padding-top: 50px;">
+    <form #reqForm='ngForm' (ngSubmit)="reqForm.form.valid && NewRequest()" novalidate>
+        <div>
+            <div class="alert alert-warning" *ngIf='invalidNewRequest'>{{errorMessage}}</div>
+            <div class="form-group">
+                <label class="wrapper">Weight of clothes</label>
+                <input type="number" class="form-control" style="width: 300px" required name="weight" min="2" max="20" 
+                    placeholder="Enter the total weight of the clothes" [(ngModel)]="order.weight" #weight="ngModel"
+                    [ngClass]="{'is-invalid':reqForm.submitted && weight.invalid}">
+                <div *ngIf="reqForm.submitted && weight.invalid" class="invalid-feedback">
+                    <div *ngIf="weight.errors.required">
+                        Weight is required
+                    </div>
+                    <div *ngIf="weight.errors.max || weight.errors.min">
+                        Weight must be less than or equal to 20 kgs.
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="wrapper">Pickup date of clothes</label>
+                <input type="date" name="pickupdate" class="form-control" style="width: 300px" min="{{curDate}}" required
+                    placeholder="Enter the pickup date of the clothes" [(ngModel)]="order.pickUpDate"
+                    #pickUpDate="ngModel" [ngClass]="{'is-invalid':reqForm.submitted && pickUpDate.invalid}">
+                <div *ngIf="reqForm.submitted && pickUpDate.invalid" class="invalid-feedback">
+                    <div *ngIf="pickUpDate.errors.required">
+                        Pick-up-date is required
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="wrapper">Select your service type</label>
+                <select name="serviceType" id="serviceType" class="form-control" [(ngModel)]="order.serviceType"
+                    #serviceType="ngModel">
+                    <option value="IRON">IRON</option>
+                    <option value="WASH">WASH</option>
+                    <option value="DRYCLEAN">DRYCLEAN</option>
+                </select>
+            </div>
+            <div class="wrapper1">
+            <button class="btn btn-primary" type="submit" id="placeOrder">Place order</button>
+        </div>
+        </div>
+    </form>
+</div>

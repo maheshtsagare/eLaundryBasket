@@ -1,0 +1,45 @@
+<br>
+<br>
+
+<div>
+    <div class="container">
+        <h3>Admin login</h3>
+    </div>
+    <br>
+    <div class="alert alert-warning" *ngIf='invalidAdminLogin'>{{errorMessage}}</div>
+    <form #adminloginForm='ngForm' (ngSubmit)="adminloginForm.form.valid && AdminLogin()">
+        <div>
+            <div class="form-group">
+                <br>
+                <input type="text" name="adminemail" class="form-control" style="width: 300px" required email
+                    placeholder="Enter your email" [(ngModel)]="admin.email" #adminemailid="ngModel"
+                    [ngClass]="{'is-invalid':adminloginForm.submitted && adminemailid.invalid}">
+                <div *ngIf="adminloginForm.submitted && adminemailid.invalid" class="invalid-feedback">
+                    <div *ngIf="adminemailid.errors.required">
+                        Email is required
+                    </div>
+                    <div *ngIf="adminemailid.errors.email">
+                        email must be a valid email
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <br>
+                <input type="password" name="adminpassword" class="form-control" style="width: 300px" required minlength="6"
+                    placeholder="Enter Password" [(ngModel)]="admin.password" #adminloginpassword="ngModel"
+                    [ngClass]="{'is-invalid':adminloginForm.submitted && adminloginpassword.invalid}">
+                <div *ngIf="adminloginForm.submitted && adminloginpassword.invalid" class="invalid-feedback">
+                    <div *ngIf="adminloginpassword.errors.required">
+                        Password is required
+                    </div>
+                    <div *ngIf="adminloginpassword.errors.minlength">
+                        Please enter a valid password
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper1">
+                <button class="btn btn-primary" type="submit" id="login">Login</button>
+            </div>
+        </div>
+    </form>
+</div>

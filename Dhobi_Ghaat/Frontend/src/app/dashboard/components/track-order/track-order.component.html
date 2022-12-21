@@ -1,0 +1,27 @@
+<div class="container card" style="padding-top: 10px;">
+    <div class="row">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Orderid</th>
+                    <th scope="col">Order date</th>
+                    <th scope="col">Service type</th>
+                    <th scope="col">weight</th>
+                    <th scope="col">Order status</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let ordr of orders">
+                <tr>
+                    <th scope="row">{{ordr.orderId}}</th>
+                    <td>{{ordr.orderDate}}</td>
+                    <td>{{ordr.plan.service}}</td>
+                    <td>{{ordr.weight}}</td>
+                    <td>{{ordr.status}}</td>
+                    <td> <button class="btn btn-info" (click)="fetchOrderDetails(ordr)" >View Order</button> </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>

@@ -1,0 +1,61 @@
+<div>
+    <form #updateAddrForm='ngForm' (ngSubmit)="updateAddrForm.form.valid && update()" novalidate>
+        <div class="container">
+            <h2>Update your Address</h2>
+        </div>
+        <div>
+            <div class="alert alert-warning" *ngIf='invalidDetails'>{{errorMessage}}</div>
+            <div class="form-group">
+                <label>House number :</label>
+                <input type="text" name="houseNo" id="houseNo" class="form-control" style="width: 300px;" required
+                placeholder="Enter your house-number" [(ngModel)]="address.houseNo" #houseNo="ngModel"
+                [ngClass]="{'is-invalid':updateAddrForm.submitted && houseNo.invalid}">
+                <div class="invalid-feedback">
+                    <div>
+                        House number is required
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Society :</label>
+                <input type="text" name="society" id="society" class="form-control" style="width: 300px;" required
+                placeholder="Enter your society name" [(ngModel)]="address.society" #society="ngModel"
+                [ngClass]="{'is-invalid':updateAddrForm.submitted && society.invalid}">
+                <div class="invalid-feedback">
+                    <div>
+                        Society is required
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>City :</label>
+                <input type="text" name="city" id="city" class="form-control" style="width: 300px;" required
+                placeholder="Enter your City" [(ngModel)]="address.city" #city="ngModel"
+                [ngClass]="{'is-invalid':updateAddrForm.submitted && city.invalid}">
+                <div class="invalid-feedback">
+                    <div>
+                        City is required
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Pincode :</label>
+                <input type="text" name="pincode" id="pincode" class="form-control" style="width: 300px;" required minlength="6" maxlength="6"
+                [pattern]="pincodePattern" placeholder="Enter your Pincode" [(ngModel)]="address.pincode" #pincode="ngModel"
+                [ngClass]="{'is-invalid':updateAddrForm.submitted && pincode.invalid}">
+                <div *ngIf="updateAddrForm.submitted && pincode.invalid" class="invalid-feedback">
+                    <div *ngIf="pincode.errors.required">
+                        Pincode number is required.
+                    </div>
+                    <div *ngIf="pincode.errors.minlength || pincode.errors.maxlength">
+                        Pincode must contain 6 digits.
+                    </div>
+                    <div *ngIf="pincode.errors.pattern">
+                        Pincode must contain numbers only.
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary" type="submit" id="update">Update</button>
+        </div>
+    </form>
+</div>

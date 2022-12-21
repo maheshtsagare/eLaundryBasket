@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+
+html { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+/* For setting the whole image as background */
+body{
+        position: relative;
+        opacity: 1;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+        background-image: url("./assets/images/background.jpg");
+}
+
+
+
+
+/* C:\Users\AK\Desktop\ALL complete Backend+Frontend\Frontend-fully final\src\assets\images\background.jpg */

@@ -1,0 +1,13 @@
+.wrapper{
+    color: white;
+}
+
+.wrapper1 {
+    height:20px; 
+    width:150px; 
+    margin: -20px -50px; 
+    position:relative;
+    top:30%; 
+    left:50%;
+    margin-top: 50px;
+  }

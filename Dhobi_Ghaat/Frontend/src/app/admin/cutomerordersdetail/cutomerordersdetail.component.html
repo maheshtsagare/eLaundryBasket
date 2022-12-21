@@ -1,0 +1,31 @@
+<br>
+<table class="table card" style="opacity: 0.9;">
+    <tr>
+        <th>#</th>
+        <th>Weight</th>
+        <th>pickUpDate</th>
+        <th>deliveryDate</th>
+        <th>orderDate</th>
+        <th>orderStatus</th>
+        <th>serviceType</th>
+        <th>bill</th>
+        <th>UpdateOrderStatus</th>
+    </tr>
+    <tr *ngFor="let order of ordersByCustId; let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{order.weight}}</td>
+        <td>{{order.pickUpDate}}</td>
+        <td>{{order.deliveryDate}}</td>
+        <td>{{order.orderDate}}</td>
+        <td><select (change)="changedStatus($event)">
+            <ng-container *ngFor="let orderstatus of orderStatus; let j=index">
+            <option [value]=orderstatus [selected]="orderstatus === order.status"> {{orderstatus}}
+            </option>
+        </ng-container>
+          </select>
+        </td>
+        <td>{{order.plan.service}}</td>
+        <td>{{order.bill}}</td>
+        <td><button class="btn btn-primary" (click)="updateOrderStatus(order.orderId,selectedStatus)">UpdateOrderStatus</button></td>
+    </tr>
+</table>
